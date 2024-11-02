@@ -1,0 +1,6 @@
+Flask
+Jinja2
+pymongo
+flask-pymongo
+Flask-Bootstrap
+Flask-WTF
