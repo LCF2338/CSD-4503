@@ -1,5 +1,5 @@
 # CSD-4503
-Flashcard memory app project:
+Flashcard memory app project!:
 
 ## Installation
 
