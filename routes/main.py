@@ -33,3 +33,5 @@ def login():
             return redirect(url_for('main_routes.index'))
         flash('Invalid credentials.', 'danger')
     return render_template('login.html', form=form)
+
+
