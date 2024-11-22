@@ -25,13 +25,13 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
       - name: Builder Docker Main Image
-        run: docker build -t $DOCKERHUB_NAMESPACE/$DOCKERHUB_REPOSITORY:$IMAGE_VERSION -f Dockerfile .
+        run: docker build -t $DOCKERHUB_NAMESPACE/$DOCKERHUB_REPOSITORY:$IMAGE_VERSION -f docker/Dockerfile .
       - name: Push Docker Main Image
         run: docker push $DOCKERHUB_NAMESPACE/$DOCKERHUB_REPOSITORY:$IMAGE_VERSION
       - name: Build Test Docker Image
         run: |
           mv .dockerignore .dockerignore.temp
-          docker build -t $DOCKERHUB_NAMESPACE/$DOCKERHUB_TEST_REPOSITORY:$IMAGE_VERSION -f DockerfileTest .
+          docker build -t $DOCKERHUB_NAMESPACE/$DOCKERHUB_TEST_REPOSITORY:$IMAGE_VERSION -f docker/DockerfileTest .
           mv .dockerignore.temp .dockerignore
       - name: Push Test Docker Image
         run: docker push $DOCKERHUB_NAMESPACE/$DOCKERHUB_TEST_REPOSITORY:$IMAGE_VERSION
