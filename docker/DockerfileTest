@@ -1,0 +1,12 @@
+
+FROM python:3.9-slim
+WORKDIR /
+COPY . .
+
+# this line will overwrite dockerignore and adds /tests direcotry into the docker image
+COPY /tests /tests
+
+RUN pip install -r requirements.txt
+
+# The following command first finds all of the test files within the "tests" directory, then runs them.
+CMD ["python", "-m", "unittest", "discover", "-s", "tests"]
