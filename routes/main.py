@@ -16,10 +16,16 @@ class LoginForm(FlaskForm):
 
 # Routes for the frontend templates
 
-@main_routes.route('/')
+# @main_routes.route('/')
+# def index():
+#     users = db.users.find()
+#     return render_template('index.html', users=users)
+
+
+@main_routes.route('/decks')
 def index():
-    users = db.users.find()
-    return render_template('index.html', users=users)
+    decks = db.decks.find()
+    return render_template('decks.html', decks=decks)
 
 
 @main_routes.route('/login', methods=['GET', 'POST'])
