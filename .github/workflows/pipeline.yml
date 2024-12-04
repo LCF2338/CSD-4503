@@ -59,6 +59,7 @@ jobs:
   deploy-docker-image:
     name: Deploy the image
     needs: [unittest, build-docker-image]
+    environment: development
     runs-on: EC2
     steps:
       - name: DockerHub Login
