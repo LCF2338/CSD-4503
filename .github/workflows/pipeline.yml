@@ -69,7 +69,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
       - name: Pull Image
         run: |
-          docker pull $DOCKERHUB_NAMESPACE/$DOCKERHUB_REPOSITORY:$IMAGE_VERSIO
+          docker pull $DOCKERHUB_NAMESPACE/$DOCKERHUB_REPOSITORY:$IMAGE_VERSION
       - name: Deploy Image
         run: |
           docker rm -f $DOCKERHUB_REPOSITORY || true
