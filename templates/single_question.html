@@ -2,7 +2,8 @@
 
 {% block content %}
 <h1>Question</h1>
-<p>{{ question.text }}</p>
+<p>Text: {{ question.question_text }}</p>
+<p>Answer: {{ question.question_answer }}</p>
 {% if question.options %}
     <h2>Options</h2>
     <ul>
@@ -13,7 +14,7 @@
 {% endif %}
 {% if question.answer %}
     <h2>Answer</h2>
-    <p>{{ question.answer }}</p>
+    <p>{{ question.question_answer }}</p>
 {% endif %}
-<a href="{{ url_for('single_deck', deck_id=deck.id) }}">Back to Deck</a>
+<a href="{{ url_for('decks_bp.single_deck_page', deck_id=deck._id) }}">Back to Deck</a>
 {% endblock %}
