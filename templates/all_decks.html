@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>All Decks</h1>
+<ul>
+    {% for deck in decks %}
+    <li>
+        <a href="{{ url_for('single_deck', deck_id=deck.id) }}">{{ deck.name }}</a> - {{ deck.description }}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
