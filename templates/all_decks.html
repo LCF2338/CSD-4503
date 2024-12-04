@@ -5,7 +5,7 @@
 <ul>
     {% for deck in decks %}
     <li>
-        <a href="{{ url_for('single_deck', deck_id=deck.id) }}">{{ deck.name }}</a> - {{ deck.description }}
+        <a href="{{ url_for('decks_bp.single_deck_page', deck_id=deck._id) }}">{{ deck.name }}</a> - {{ deck.description }}
     </li>
     {% endfor %}
 </ul>

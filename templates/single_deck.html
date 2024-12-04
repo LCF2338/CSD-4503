@@ -5,9 +5,9 @@
 <p>{{ deck.description }}</p>
 <h2>Cards</h2>
 <ul>
-    {% for card in deck.cards %}
+    {% for question in deck.questions %}
     <li>
-        <a href="{{ url_for('single_question', deck_id=deck.id, card_id=card.id) }}">{{ card.question }}</a>
+        <a href="{{ url_for('decks_bp.single_question_page', deck_id=deck._id, question_id=question._id) }}">{{ question.question_text }}</a>
     </li>
     {% endfor %}
 </ul>
