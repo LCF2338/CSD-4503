@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>{{ deck.name }}</h1>
+<p>{{ deck.description }}</p>
+<h2>Cards</h2>
+<ul>
+    {% for card in deck.cards %}
+    <li>
+        <a href="{{ url_for('single_question', deck_id=deck.id, card_id=card.id) }}">{{ card.question }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
