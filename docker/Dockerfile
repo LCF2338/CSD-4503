@@ -16,4 +16,4 @@ RUN pip install -r requirements.txt
 EXPOSE 5000
 
 # To run the app in the container
-CMD ["python", "./routes/main.py"]
+CMD ["python", "./app.py"]
